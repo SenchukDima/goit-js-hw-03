@@ -1,17 +1,27 @@
-'use strict'
+"use strict";
+const products = [
+  { name: "Радар", price: 1300, quantity: 4 },
+  { name: "Сканер", price: 2700, quantity: 3 },
+  { name: "Дроид", price: 400, quantity: 7 },
+  { name: "Захват", price: 1200, quantity: 2 }
+];
 
-function checkForSpam(str) {
-  let lowerCaseStr = str.toLowerCase();
-  const result = lowerCaseStr.includes('spam') || lowerCaseStr.includes('sale')?
-        true : false;
-  return result; 
+function getAllPropValues(arr, prop) {
+  let searchedKey = [];
+  for(let elements of arr) {
+    for(let key in elements) {
+      if(key === prop) {
+      searchedKey.push(elements[key]);
+      }
+    }
+  }
+  return searchedKey;
 }
 
 
-console.log(checkForSpam('Latest technology news'));
+console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 
-console.log(checkForSpam('JavaScript weekly newsletter'));
+console.log(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
 
-console.log(checkForSpam('Get best sale offers now!'));
-
-console.log(checkForSpam('[SPAM] How to earn fast money?'));
+console.log(getAllPropValues(products, "category")); // []
+  

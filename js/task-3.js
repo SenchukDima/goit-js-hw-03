@@ -1,20 +1,40 @@
-'use strict'
+"use strict";
 
-function findLongestWord(string) {
-    let splitedString = string.split(" ");
-    let longestWord = 0;
-    let result;
-    for (let i = 0; i < splitedString.length ; i++) {
-        if (longestWord < splitedString[i].length) {
-            longestWord = splitedString[i].length;
-            result = splitedString[i];
-        }
+function findBestEmployee(employees) {
+  const elements = Object.entries(employees);
+  let mostTasks = 0;
+  let bestEmployee;
+  for (let element of elements) {
+    if (element[1] > mostTasks) {
+      mostTasks = element[1];
+      bestEmployee = element[0];
     }
-    return result;
+  }
+  return bestEmployee;
 }
 
-console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+console.log(
+  findBestEmployee({
+    ann: 29,
+    david: 35,
+    helen: 1,
+    lorence: 99
+  })
+); // lorence
 
-console.log(findLongestWord('Google do a roll')); 
+console.log(
+  findBestEmployee({
+    poly: 12,
+    mango: 17,
+    ajax: 4
+  })
+); // mango
 
-console.log(findLongestWord('May the force be with you'));
+console.log(
+  findBestEmployee({
+    lux: 147,
+    david: 21,
+    kiwi: 19,
+    chelsy: 38
+  })
+); // lux

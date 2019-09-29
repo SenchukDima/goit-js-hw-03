@@ -1,10 +1,21 @@
 'use strict'
 
-function logItems(array) {
-    for (let item of array) {
-console.log(`${array.indexOf(item)} - ${item}`);   
-    }
-};
+const user = {
+    name: 'Mango',
+    age: 20,
+    hobby: 'html',
+    premium: true,
+  };
 
-logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+  user.mood = 'happy';
+  user.hobby = 'javascript';
+  user.premium = false;
+
+  
+const objectElements = Object.entries(user);
+
+  for (let objectElement of objectElements) {
+      const key = objectElement[0];
+      const value = objectElement[1];
+      console.log(`${key}: ${value}`);  
+    }

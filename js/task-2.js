@@ -1,23 +1,11 @@
 'use strict'
 
-function calculateEngravingPrice(message, pricePerWord) {
-    return message.split(' ').length * pricePerWord;
+function countProps(obj) {
+return Object.values(obj).length;
 };
 
-console.log(
-    calculateEngravingPrice(
-      'Proin sociis natoque et magnis parturient montes mus',
-      10
-    ),
-  );
+console.log(countProps({})); // 0
 
-  console.log(
-    calculateEngravingPrice(
-      'Proin sociis natoque et magnis parturient montes mus',
-      20,
-    ),
-  );
+console.log(countProps({ name: 'Mango', age: 2 })); // 2
 
-  console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 40));
-
-console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 20));
+console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
