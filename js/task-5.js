@@ -1,5 +1,5 @@
 "use strict";
-const products = [
+const allProducts = [
   { name: "Радар", price: 1300, quantity: 4 },
   { name: "Сканер", price: 2700, quantity: 3 },
   { name: "Дроид", price: 400, quantity: 7 },
@@ -19,9 +19,9 @@ function getAllPropValues(arr, prop) {
 }
 
 
-console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+console.log(getAllPropValues(allProducts, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 
-console.log(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
+console.log(getAllPropValues(allProducts, "quantity")); // [4, 3, 7, 2]
 
-console.log(getAllPropValues(products, "category")); // []
+console.log(getAllPropValues(allProducts, "category")); // []
   
