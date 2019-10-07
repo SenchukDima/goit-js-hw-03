@@ -1,16 +1,18 @@
 "use strict";
 
+
 function findBestEmployee(employees) {
-  const elements = Object.entries(employees);
-  let mostTasks = 0;
-  let bestEmployee;
-  for (let element of elements) {
-    if (element[1] > mostTasks) {
-      mostTasks = element[1];
-      bestEmployee = element[0];
+  const objectKeys = Object.keys(employees);
+  let mostValues = 0;
+  let mostKey;
+  for (const Key of objectKeys) {
+    if (employees[Key] > mostValues) {
+      mostValues = employees[Key];
+      mostKey = Key;
     }
+     
   }
-  return bestEmployee;
+  return mostKey;
 }
 
 console.log(

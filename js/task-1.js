@@ -12,10 +12,9 @@ const user = {
   user.premium = false;
 
   
-const objectElements = Object.entries(user);
+const objectKeys = Object.keys(user);
 
-  for (let objectElement of objectElements) {
-      const key = objectElement[0];
-      const value = objectElement[1];
-      console.log(`${key}: ${value}`);  
+
+  for (const objectKey of objectKeys) {
+      console.log(`${objectKey}: ${user[objectKey]}`);  
     }
